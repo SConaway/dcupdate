@@ -6,7 +6,8 @@ COMPOSE_BASH_COMP_URL="https://raw.githubusercontent.com/docker/compose/$LATEST_
 COMPOSE_ZSH_COMP_URL="https://raw.githubusercontent.com/docker/compose/$LATEST_VERSION/contrib/completion/zsh/_docker-compose"
 
 rm -f -- /usr/local/bin/docker-compose
-curl -L COMPOSE_URL -o /usr/local/bin/docker-compose
+sudo curl -L COMPOSE_URL -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 sudo curl -L $COMPOSE_BASH_COMP_URL -o /etc/bash_completion.d/docker-compose
 mkdir -p ~/.zsh/completion
